@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Communication Skills Assessment</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1 id="companyLogo">SL<span style="color: grey; font-size: 1.2em;">>/<</span>IT</h1>
+        <p id="companySlogan">Empowering the Futures, Achieving Together</p>
+    </header>
+      <br>
+      <br>
+    <div class="auth-background" id="authBackground">
+        <div class="auth-form-container">
+            <h2>Welcome to the SLSIT communication skills assessment platform</h2>
+            <button id="loginButton" onclick="showLogin()">Login</button>
+            <button id="registerButton" onclick="showRegister()">Register</button>
+            <div id="loginForm" style="display:none;">
+                <h2>Login</h2>
+                <form id="loginFormSubmit">
+                    <input type="email" id="loginEmail" placeholder="Email" required />
+                    <input type="password" id="loginPassword" placeholder="Password" required />
+                    <button type="submit">Login</button>
+                </form>
+                <p id="loginMessage"></p>
+            </div>
+            <div id="registerForm" style="display:none;">
+                <h2>Register</h2>
+                <form id="registerFormSubmit">
+                    <input type="email" id="registerEmail" placeholder="Email" required />
+                    <input type="password" id="registerPassword" placeholder="Password" required />
+                    <button type="submit">Register</button>
+                </form>
+                <p id="registerMessage"></p>
+    </div>
+ <div class="login-images">
+        <h3 id="companyLogo">SL<span style="color: red; font-size: 1.2em;">>/<</span>IT</h3>
+        <p id="companySlogan">Empowering the Futures, Achieving Together</p>
+            </div>
+    <div class="dashboard" id="dashboard" style="display:none;">
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#assessments">Assessments</a></li>
+                <li><a href="#progress">Progress</a></li>
+            </ul>
+        </nav>
+
+        <div id="home">
+            <h2>Welcome to Your Dashboard</h2>
+            <p>Here, you can improve your communication skills.</p>
+        </div>
+
+        <div id="assessments">
+            <h3>Assessments</h3>
+            <ul>
+                <li><a href="#grammar">Grammar</a></li>
+                <li><a href="#vocabulary">Vocabulary</a></li>
+                <li><a href="#listening">Listening</a></li>
+                <li><a href="#speaking">Speaking</a></li>
+                <li><a href="#writing">Writing</a></li>
+            </ul>
+        </div>
+
+        <div id="progress">
+            <h3>Your Progress</h3>
+            <p>Track your communication skills progress here.</p>
+        </div>
+
+        <div id="grammar">
+            <h3>Grammar</h3>
+            <p>Grammar is the foundation of language.</p>
+            <button type="button" onclick="startGrammarAssessment()">Start Assessment</button>
+            <form id="grammarForm" style="display:none;">
+                <p>What is the correct form of the verb "to be" in the present tense for "I"?</p>
+                <input type="radio" id="am" name="grammarQuestion" value="am">
+                <label for="am">am</label><br>
+                <input type="radio" id="is" name="grammarQuestion" value="is">
+                <label for="is">is</label><br>
+                <input type="radio" id="are" name="grammarQuestion" value="are">
+                <label for="are">are</label><br>
+                <button type="submit">Submit</button>
+            </form>
+            <p id="grammarResult"></p>
+
+        </div>
+        <div id="vocabulary">
+            <h3>Vocabulary</h3>
+            <p>Build your vocabulary to improve communication.</p>
+             <button type="button" onclick="startVocabularyAssessment()">Start Assessment</button>
+            <form id="vocabularyForm" style="display:none;">
+                <p>What does the word "perspicacious" mean?</p>
+                <input type="radio" id="intelligent" name="vocabularyQuestion" value="intelligent">
+                <label for="intelligent">intelligent</label><br>
+                <input type="radio" id="having-keen-understanding" name="vocabularyQuestion" value="having keen understanding">
+                <label for="having-keen-understanding">having keen understanding</label><br>
+                <input type="radio" id="careless" name="vocabularyQuestion" value="careless">
+                <label for="careless">careless</label><br>
+                <button type="submit">Submit</button>
+            </form>
+            <p id="vocabularyResult"></p>
+
+        </div>
+        <div id="listening">
+            <h3>Listening</h3>
+            <p>Improve your listening skills for better understanding.</p>
+            <button type="button" onclick="startListeningAssessment()">Start Assessment</button>
+            <div id="listeningStart" style="display: block;">
+                <p>Click the button below to start the listening assessment.</p>
+                <button id="playAudioButton">Play Audio</button>
+                <audio id="listeningAudio" src="listening_audio.mp3"></audio>
+            </div>
+            <form id="listeningForm" style="display:none;">
+                <p>What is the main idea of the audio clip?</p>
+                <input type="radio" id="main-idea-1" name="listeningQuestion" value="main idea 1">
+                <label for="main-idea-1">Main Idea 1</label><br>
+                <input type="radio" id="main-idea-2" name="listeningQuestion" value="main idea 2">
+                <label for="main-idea-2">Main Idea 2</label><br>
+                <input type="radio" id="main-idea-3" name="listeningQuestion" value="main idea 3">
+                <label for="main-idea-3">Main Idea 3</label><br>
+                <button type="submit">Submit</button>
+            </form>
+            <p id="listeningResult"></p>
+        </div>
+
+         <div id="speaking">
+            <h3>Speaking</h3>
+            <p>Enhance your speaking skills for effective communication.</p>
+            <button type="button" onclick="startSpeakingAssessment()">Start Assessment</button>
+             <div id="speakingAssessment" style="display:none;">
+                <button id="playAudioButton">Play Audio</button>
+                <audio id="speakingAudio" src="speaking_audio.mp3"></audio>
+                <button id="startRecordingButton">Start Recording</button>
+                <p id="speakingResult"></p>
+                <p>Posture Analysis: <span id="speakingPosture">Pending</span></p>
+            </div>
+        </div>
+
+        <div id="writing">
+            <h3>Writing</h3>
+            <p>Develop your writing skills for clear expression.</p>
+             <button type="button" onclick="startWritingAssessment()">Start Assessment</button>
+             <div id="writingAssessment" style="display:none;">
+                <p>Write a short essay on: "The Importance of Communication in the Modern World"</p>
+                <textarea id="writingEssay" rows="4" cols="50"></textarea><br>
+                <button id="submitWritingButton">Submit</button>
+                <p id="writingResult"></p>
+                <p>Posture Analysis: <span id="writingPosture">Pending</span></p>
+            </div>
+        </div>
+        <button type="button" onclick="logout()">Logout</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
